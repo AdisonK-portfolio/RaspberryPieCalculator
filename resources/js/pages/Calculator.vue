@@ -87,17 +87,6 @@
                     <button class="bg-blue-800 shadow-lg p-2 text-xl w-full text-white" @click="calculate">=</button>
                 </div>
             </div>
-
-            <div class="text-sm p-4 md:p-6 border-2 border-gray-200 bg-gray-100 md:my-6 my-4">
-                <div>Need some ideas? Try these:</div>
-                <div class="ml-2">
-                    <p>6+3(5-2)</p>
-                    <p>((((8+8)^2)))+3*2.5</p>
-                    <p>(3^2*2)^2+(3^2*2)^2</p>
-                    <p>√(3+6)+5</p>
-                    <p>Or see tests/Feature/CalculationTest.php</p>
-                </div>
-            </div>
         </div>
 
         <!-- Calculations -->
@@ -112,11 +101,11 @@
                 </div>
                 
                 <div v-for="item in history">
-                    <div>{{ item.calculation }}</div>
-                    <div class="text-gray-600 text-right mb-2 flex justify-between">
-                        {{ item.result }}
-                        <Trash :url="'/calculation/' + item.id" @click="deleteItem(item.id)"/>
+                    <div class="text-gray-600 text-right flex justify-between">
+                        {{ item.calculation }}
+                        <Trash class="pt-1" :url="'/calculation/' + item.id" @click="deleteItem(item.id)"/>
                     </div>
+                    <div class="mb-2">{{ item.result }}</div>
                 </div>
             </div>
         </div>

@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Calculation;
 use App\Models\User;
+use Database\Factories\CalculationFactory;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -22,5 +24,6 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
             
         ]);
+        CalculationFactory::createCalculations();
     }
 }
